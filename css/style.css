@@ -1,0 +1,740 @@
+@import url(https://fonts.googleapis.com/css?family=Lato);
+* {
+  margin: 0;
+  padding: 0;
+}
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+}
+ol,
+ul {
+  list-style: none;
+}
+a {
+  color: #000;
+  text-decoration: none;
+}
+html {
+  line-height: 1.2;
+}
+body {
+  background-color: #fff;
+  color: #333;
+  font-family: "Lato", arial, sans-serif;
+  font-size: 12px;
+  padding-top: 0px;
+}
+.mobile {
+  background-color: #ffffff;
+  border: 0 ;
+  border-width: device-width;
+  border-radius: 0px;
+  
+  margin: 0px auto;
+  max-width: device-width;
+    min-height: 520px;
+  height: device-height;
+  overflow: hidden;
+  position: relative;
+}
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  background-color: #fff;
+  background-color: #016451;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
+  height: 50px;
+  
+}
+.logo {
+  color: #fff;
+  font-size: 20px;
+  line-height: 50px;
+  padding: 0 0 0 20px;
+  text-transform: capitalize;
+
+}
+/* menu button */
+
+
+
+.btn {
+    
+    background-color: #006451; /* Green */
+  border: none;
+  color: white;
+  padding: 10px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  cursor: pointer;
+    
+/*
+  background: #08a652;
+  background-image: -webkit-linear-gradient(top, #08a652, #098041);
+  background-image: -moz-linear-gradient(top, #08a652, #098041);
+  background-image: -ms-linear-gradient(top, #08a652, #098041);
+  background-image: -o-linear-gradient(top, #08a652, #098041);
+  background-image: linear-gradient(to bottom, #08a652, #098041);
+  -webkit-border-radius: 10;
+  -moz-border-radius: 10;
+  border-radius: 10px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 14px;
+  padding: 10px 24px 11px 22px;
+  text-decoration: none;
+*/
+}
+
+.btn:hover {
+    
+
+  background: #04782c;
+  background-image: -webkit-linear-gradient(top, #006451, #006451);
+  background-image: -moz-linear-gradient(top, #006451, #006451);
+  background-image: -ms-linear-gradient(top, #006451, #006451);
+  background-image: -o-linear-gradient(top, #006451, #006451);
+  background-image: linear-gradient(to bottom, #006451, #02c768);
+  text-decoration: none;
+}
+
+
+.btn[disabled]{
+  border: 1px solid #04782c;
+  background-color: rgba(25, 182, 152, 0.1);;
+  color: #04782c;
+}
+
+/* main menu block */
+.mainMenu {
+  background-color: #fff;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 100;
+  height: 100%;
+  width: 100%;
+  display: table;
+  text-align: center;
+  opacity: 0;
+  -webkit-transition: all 500ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  transition: all 500ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  -webkit-transform: scale(0);
+          transform: scale(0);
+}
+.mainMenu.act {
+  opacity: 1;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+.mainMenu.act ul li {
+  opacity: 1;
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+}
+.mainMenu ul {
+  display: table-cell;
+  vertical-align: middle;
+}
+.mainMenu li {
+  padding: 8px 0;
+  -webkit-transition: all 400ms 510ms;
+  transition: all 400ms 510ms;
+  opacity: 0;
+}
+.mainMenu li:nth-child(odd) {
+  -webkit-transform: translateX(30%);
+          transform: translateX(30%);
+}
+.mainMenu li:nth-child(even) {
+  -webkit-transform: translateX(-30%);
+          transform: translateX(-30%);
+}
+.mainMenu li:last-child {
+  -webkit-transform: none;
+          transform: none;
+}
+.mainMenu a {
+  color: #19b698;
+  display: inline-block;
+  font-size: 18px;
+}
+.mainMenu a.suBtn {
+  color: #fff;
+}
+/* sign up button */
+.suBtn {
+  background-color: #19b698;
+  border-radius: 5px;
+  padding: 10px 20px;
+}
+i {
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 5px;
+   margin-left: 20px;
+}
+.left {
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+    
+}
+
+.login {
+  position: relative;
+  margin: auto;
+  padding: 20px 20px 20px;
+  width: auto;
+  background: white;
+  border-radius: 3px;
+  -webkit-box-shadow: 0 0 200px rgba(255, 255, 255, 0.5), 0 1px 2px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 200px rgba(255, 255, 255, 0.5), 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+.login:before {
+  content: '';
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  bottom: -8px;
+  left: -8px;
+  z-index: -1;
+  background: rgba(0, 0, 0, 0.08);
+  border-radius: 4px;
+}
+.login h1 {
+  margin: -20px -20px 21px;
+  line-height: 40px;
+  font-size: 15px;
+  font-weight: bold;
+  color: #006451;
+  text-align: center;
+  text-shadow: 0 1px white;
+  background: rgba(25, 182, 152, 0.1);
+  border-bottom: 1px solid #cfcfcf;
+  border-radius: 3px 3px 0 0;
+  background-image: -webkit-linear-gradient(top, whiteffd, #eef2f5);
+  background-image: -moz-linear-gradient(top, whiteffd, #eef2f5);
+  background-image: -o-linear-gradient(top, whiteffd, #eef2f5);
+  background-image: linear-gradient(to bottom, whiteffd, #eef2f5);
+  -webkit-box-shadow: 0 1px whitesmoke;
+  box-shadow: 0 1px whitesmoke;
+}
+.login p {
+  margin: 20px 0 0;
+}
+.login p:first-child {
+  margin-top: 0;
+}
+.login input[type=text], .login input[type=password] {
+  width: 90%;
+}
+.login p.remember_me {
+  float: left;
+  line-height: 31px;
+}
+.login p.remember_me label {
+  font-size: 12px;
+  color: #777;
+  cursor: pointer;
+}
+.login p.remember_me input {
+  position: relative;
+  bottom: 1px;
+  margin-right: 4px;
+  vertical-align: middle;
+}
+.login p.submit {
+  text-align: right;
+}
+
+.login-help {
+  margin: 20px 0;
+  font-size: 12px;
+  color: #19b698;
+  text-align: center;
+  text-shadow: 0 1px #2a85a1;
+}
+.login-help a {
+  color: #007962;
+  text-decoration: none;
+}
+.login-help a:hover {
+  text-decoration: underline;
+}
+
+:-moz-placeholder {
+  color: #c9c9c9 !important;
+  font-size: 13px;
+}
+
+::-webkit-input-placeholder {
+  color: #ccc;
+  font-size: 13px;
+}
+
+input {
+  font-family: 'Lucida Grande', Tahoma, Verdana, sans-serif;
+  font-size: 14px;
+}
+
+input[type=text], input[type=password], input[type=Email], input[type=number], input[type=date], input[type=month], textarea,  select {
+  margin: 5px;
+  padding: 0 10px;
+  width: 90%;
+  height: 34px;
+  color: #404040;
+  background: white;
+  border: 1px solid;
+  border-color: #c4c4c4 #d1d1d1 #d4d4d4;
+  border-radius: 2px;
+  outline: 5px solid #eff4f7;
+  -moz-outline-radius: 3px;
+  -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.12);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.12);
+}
+input[type=text]:focus, input[type=password]:focus, input[type=Email]:focus,input[type=number]:focus, input[type=date]:focus, input[type=month]:focus, textarea:focus, select:focus {
+  border-color: #7de2cf;
+  outline-color: #dcf6fc;
+  outline-offset: 0;
+}
+
+
+
+.lt-ie9 input[type=text], .lt-ie9 input[type=password] {
+  line-height: 34px;
+}
+
+.sred
+{
+  color:#fb0000;text-align:center;
+  text-align:center;
+  font-size: 11px;
+}
+
+.sgreen
+{
+  color:#016f5a;text-align:center;
+  text-align:center;
+  font-size: 12px;
+}
+.linkred
+{
+  color:#fb0000;text-align:center;
+   font-size: 12px;
+}
+.sgreen
+{
+  color:#01765f;text-align:center;
+   font-size: 12px;
+    margin: 15px;
+}
+
+table {
+    border-collapse: separate;
+    width: 100%;
+    border-bottom-style: groove;
+   
+}
+
+th, td {
+    text-align: center;
+    padding:  5px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+th {
+    background-color: #006451;
+    color: ghostwhite;
+}
+
+td {
+    color : #006451;
+}
+
+
+.leftalign {
+ 
+  position: absolute;
+  right: 20px;
+  top: 10px;
+  z-index: 101;
+}
+
+.tabdiv{
+    overflow-x:auto;
+}
+
+/* Paste this css to your style sheet file or under head tag */
+/* This only works with JavaScript, 
+if it's not present, don't show loader */
+.no-js #loader { display: none;  }
+.js #loader { display: block; position: absolute; left: 100px; top: 0; }
+.se-pre-con {
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 9999;
+	background: url(../asset/messapp.gif) center no-repeat #fff;
+}
+
+
+
+ 
+
+
+
+
+
+
+.main{
+	border : 0px solid #016f5a;
+	background : ;
+	padding: 10px 0px;
+	width : auto;
+	height : 40px;
+}
+#loading{
+	visibility:hidden;
+	padding-left:5px;
+}
+#ajax_response{
+	border : 1px solid #8789E7;
+	background : #FFFFFF;
+	position:absolute;
+	display:none;
+	padding:2px 2px;
+	top:auto;
+}
+#holder{
+	width : 100%;
+}
+.list {
+	padding:0px 0px;
+	margin:0px;
+	list-style : none;
+}
+.list li a{
+	text-align : left;
+	padding:2px;
+	cursor:pointer;
+	display:block;
+	text-decoration : none;
+	color:#000000;
+}
+.selected{
+	background : #cdeadc;
+}
+.bold{
+	font-weight:bold;
+	color: #ed0404;
+}
+.about{
+	text-align:right;
+	font-size:10px;
+	margin : 10px 4px;
+}
+.about a{
+	color:#BCBCBC;
+	text-decoration : none;
+}
+.about a:hover{
+	color:#575757;
+	cursor : default;
+}
+
+
+.request {
+    background-color: #016f5a; /* Green */
+    border: none;
+    color: white;
+    padding: 4px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 90%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+
+
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+   from {top:-300px; opacity:0} 
+  to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+    from {top:-300px; opacity:0}
+  to {top:0; opacity:1}
+}
+
+/* The Close Button */
+.close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-header {
+    padding: 2px 16px;
+    background-color: #016f5a;
+    color: white;
+}
+
+.modal-body {padding: 2px 16px;}
+
+.modal-footer {
+    padding: 2px 16px;
+    background-color: #016f5a;
+    color: white;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  background: rgba(25, 182, 152, 0.1);
+  float: left;
+  border: none;
+  outline: none;
+  margin: auto;
+    width: 50%;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 1s;
+  font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #006451;
+   color: #FFFFFF; 
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  
+  border: 1px solid #ccc;
+  border-top: none;
+}
+
+/* Style the close button */
+.topright {
+  float: right;
+  cursor: pointer;
+  font-size: 28px;
+}
+
+.topright:hover {color: red;}
+
+
+
+input[type='checkbox'].check-custom {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+/* Styles for the basic appearance of the toggle switch */
+input[type='checkbox'].check-custom.toggle-switch ~ .check-toggle {
+  width: 1.5rem;
+  height: 1rem;
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+/* Common styles for the ::before and ::after pseudo-elements of the toggle switch */
+input[type='checkbox'].check-custom.toggle-switch ~ .check-toggle::before,
+input[type='checkbox'].check-custom.toggle-switch ~ .check-toggle::after {
+  content: '';
+  top: 0;
+  left: 0;
+  position: absolute;
+}
+
+/* Styles for the ::before pseudo-element (the outer frame) of the toggle switch */
+input[type='checkbox'].check-custom.toggle-switch ~ .check-toggle::before {
+  width: 100%;
+  height: 100%;
+  border-radius: 0.5rem;
+  background: #dbdbdb;
+}
+
+/* Styles for the ::after pseudo-element (the inner slider) of the toggle switch */
+input[type='checkbox'].check-custom.toggle-switch ~ .check-toggle::after {
+  width: 0.75rem;
+  height: 0.75rem;
+  margin: 0.125rem;
+  border-radius: 50%;
+  background: #ffffff;
+}
+
+/* Styles for the ::before pseudo-element of the toggle switch in hover state */
+input[type='checkbox'].check-custom.toggle-switch:hover ~ .check-toggle::before {
+  background: #c4c4c4;
+}
+
+/* Styles for the ::before pseudo-element of the toggle switch in focus state */
+input[type='checkbox'].check-custom.toggle-switch:focus ~ .check-toggle::before {
+  box-shadow: 0 0 0 2px rgba(23, 133, 255, 0.5);
+}
+
+/* Styles for the ::before pseudo-element of the toggle switch in both focus and checked or enabled state */
+input[type='checkbox'].check-custom.toggle-switch:focus:checked ~ .check-toggle::before {
+  box-shadow: 0 0 0 2px rgba(97, 191, 158, 0.5);
+}
+
+/* Styles for the ::before pseudo-element of the toggle switch in checked or enabled state */
+input[type='checkbox'].check-custom.toggle-switch:checked ~ .check-toggle::before {
+  background: #006451;
+}
+
+/* Styles for the ::after pseudo-element of the toggle switch in checked or enabled state */
+input[type='checkbox'].check-custom.toggle-switch:checked ~ .check-toggle::after {
+  left: auto;
+  right: 0;
+}
+
+
+
+
+
+
+
+.MyLabel {
+  margin-left: 30%;
+    margin-right: 30%; 
+
+  width: 40%;
+  border-radius: 3px;
+  border: 1px solid #D1D3D4
+}
+
+/* hide input */
+input.radio:empty {
+    
+	margin-left: -3000px;
+    
+}
+
+/* style label */
+input.radio:empty ~ label {
+  
+	position: relative;
+    margin-left: 30%;
+    margin-right: 30%;
+	float: left;
+	line-height: 2.5em;
+	text-indent: 3.25em;
+	margin-top: 2em;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+input.radio:empty ~ label:before {
+    
+	position: absolute;
+   
+	display: block;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	content: '';
+	width: 2.5em;
+	background: #D1D3D4;
+	border-radius: 3px 0 0 3px;
+}
+
+/* toggle hover */
+input.radio:hover:not(:checked) ~ label:before {
+	content:'\2714';
+	text-indent: .9em;
+	color: #C2C2C2;
+}
+
+input.radio:hover:not(:checked) ~ label {
+	color: #888;
+}
+
+/* toggle on */
+input.radio:checked ~ label:before {
+	content:'\2714';
+	text-indent: .9em;
+	color: #9CE2AE;
+	background-color: #006451;
+}
+
+input.radio:checked ~ label {
+	color: #006451;
+}
+
+/* radio focus */
+/*
+input.radio:focus ~ label:before {
+	box-shadow: 0 0 0 3px #999;
+}*/
